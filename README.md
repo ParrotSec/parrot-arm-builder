@@ -5,7 +5,7 @@ You need a Debian (or derivates) or a Parrot (or derivates) installation to use 
 
 (Work in progress to get it working on Ubuntu and derivates)
 
-- Use need first to install live-build:
+- You need first to install live-build:
 
 sudo apt-get install live-build
 
