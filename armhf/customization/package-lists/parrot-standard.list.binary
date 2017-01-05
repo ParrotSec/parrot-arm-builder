@@ -163,3 +163,6 @@ mate-settings-daemon-common
 mate-terminal-common
 libmarco-private1
 mate-applets
+mate-indicator-applet
+mate-dock-applet
+mate-sensors-applet
