@@ -100,3 +100,21 @@ reiser4progs
 reiserfsprogs
 xfsprogs
 xfsdump
+
+# raspberry-pi packages
+
+libraspberrypi0
+libraspberrypi-bin
+libraspberrypi-dev
+libraspberrypi-doc
+lxkeymap
+raspberrypi-bootloader
+raspberrypi-kernel
+raspberrypi-kernel-headers
+raspberrypi-sys-mods
+raspi-copies-and-fills
+raspi-gpio
+rpi-update
+rc-gui
+ssh-regen-startup
+
