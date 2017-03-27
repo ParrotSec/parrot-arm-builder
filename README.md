@@ -7,7 +7,7 @@ You need a Debian (or derivates) or a Parrot (or derivates) installation to use 
 
 - You need first to install live-build and some other tools (i386 and x86_64 platforms):
 
-sudo apt-get install live-build qemu-arm-static bootstrap
+sudo apt-get install live-build qemu-arm-static bootstrap make
 
 (If you want to build directly on armhf, remove the references to qemu on the configure script)
 
