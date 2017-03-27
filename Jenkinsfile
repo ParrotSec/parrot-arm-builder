@@ -19,8 +19,8 @@ make clean
 ./configure'''
             
           },
-          "configure aarch64": {
-            sh '''cd aarch64
+          "configure arm64": {
+            sh '''cd arm64
 make clean
 ./configure'''
             
@@ -36,8 +36,8 @@ make clean
 make -j8'''
             
           },
-          "build aarch64": {
-            sh '''cd aarch64
+          "build arm64": {
+            sh '''cd arm64
 make -j8'''
             
           }
