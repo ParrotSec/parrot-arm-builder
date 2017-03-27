@@ -4,7 +4,7 @@ pipeline {
     stage('setup') {
       steps {
         ws(dir: '/opt/jenkins/parrot-builds') {
-          sh 'apt-get install live-build qemu-user-static debootstrap make'
+          sh 'apt-get -y install live-build qemu-user-static debootstrap make'
         }
         
         pwd()
