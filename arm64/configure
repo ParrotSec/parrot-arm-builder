@@ -28,7 +28,7 @@ lb config noauto \
  --binary-filesystem ext4 \
  --debug \
  --bootstrap-qemu-arch arm64 \
- --bootstrap-qemu-static /usr/bin/qemu-arm-static \
+ --bootstrap-qemu-static /usr/bin/qemu-aarch64-static \
  --mirror-bootstrap 'http://archive.parrotsec.org/parrot' \
  --mirror-chroot 'http://archive.parrotsec.org/parrot' \
  --mirror-binary 'http://archive.parrotsec.org/parrot' \
