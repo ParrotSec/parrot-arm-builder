@@ -3,10 +3,11 @@ pipeline {
   stages {
     stage('setup') {
       steps {
-        ws(dir: '/home/spf/parrot-builds') {
+        ws(dir: '/opt/jenkins/parrot-builds') {
           sh 'apt-get install live-build qemu-arm-static bootstrap make'
         }
         
+        pwd()
       }
     }
     stage('configure armhf') {
