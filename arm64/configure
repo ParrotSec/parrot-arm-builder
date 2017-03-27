@@ -13,7 +13,7 @@ echo "I: create configuration"
 export LB_BOOTSTRAP_INCLUDE="apt-transport-https gnupg2"
 lb config noauto \
  --distribution parrot \
- --architectures aarch64 \
+ --architectures arm64 \
  --archive-areas 'main' \
  --keyring-packages parrot-archive-keyring \
  --debootstrap-options '--keyring=config/archives/parrot.key.chroot' \
@@ -27,18 +27,18 @@ lb config noauto \
  --debconf-frontend noninteractive \
  --binary-filesystem ext4 \
  --debug \
- --bootstrap-qemu-arch aarch64 \
+ --bootstrap-qemu-arch arm64 \
  --bootstrap-qemu-static /usr/bin/qemu-arm-static \
  --mirror-bootstrap 'http://archive.parrotsec.org/parrot' \
  --mirror-chroot 'http://archive.parrotsec.org/parrot' \
  --mirror-binary 'http://archive.parrotsec.org/parrot' \
  --iso-application 'Parrot' \
  --iso-publisher 'Parrot Project' \
- --iso-volume 'ParrotSec 3.5 aarch64' \
+ --iso-volume 'ParrotSec 3.5 arm64' \
  --linux-flavours none \
  --linux-packages none \
  --debian-installer false \
- --bootappend-live 'username=parrot hostname=parrot-aarch64' \
+ --bootappend-live 'username=parrot hostname=parrot-arm64' \
  --source false \
  --binary-images tar \
  --mode debian \

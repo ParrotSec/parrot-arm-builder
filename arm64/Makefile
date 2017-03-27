@@ -10,7 +10,7 @@
 # You need live-build package installed and superuser privileges.
 
 BUILD_NUMBER=1
-BASEIMG=parrotsec-standard-3.5-aarch64
+BASEIMG=parrotsec-standard-3.5-arm64
 IMAGEPREFIX=$(BASEIMG)-$(BUILD_NUMBER)
 LOGFILE=$(IMAGEPREFIX).build-log.txt
 CONFIGFILE=$(IMAGEPREFIX).config.tar.bz2
@@ -23,23 +23,23 @@ SHA1SUMSFILE=$(IMAGEPREFIX).sha1sums.txt
 
 all:
 	set -e; sudo lb build 2>&1 | tee $(LOGFILE)
-	if [ -f live-image-aarch64.tar.tar.gz ]; then \
+	if [ -f live-image-arm64.tar.tar.gz ]; then \
 		tar -jcf $(CONFIGFILE) auto/ config/ configure; \
-		sudo mv live-image-aarch64.contents $(LISTFILE); \
+		sudo mv live-image-arm64.contents $(LISTFILE); \
 		sudo mv chroot.files $(CHROOTFILE); \
 		sudo mv chroot.packages.install $(PKGSFILE); \
-		sudo mv live-image-aarch64.tar.tar.gz $(TARGZFILE); \
+		sudo mv live-image-arm64.tar.tar.gz $(TARGZFILE); \
 		md5sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(CHROOTFILE) $(PKGSFILE) $(TARGZFILE) > $(MD5SUMSFILE); \
 		sha1sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(CHROOTFILE) $(PKGSFILE) $(TARGZFILE) > $(SHA1SUMSFILE); \
 	fi
 
 finalize:
-	if [ -f live-image-aarch64.tar.tar.gz ]; then \
+	if [ -f live-image-arm64.tar.tar.gz ]; then \
 		tar -jcf $(CONFIGFILE) auto/ config/ configure; \
-		sudo mv live-image-aarch64.contents $(LISTFILE); \
+		sudo mv live-image-arm64.contents $(LISTFILE); \
                 sudo mv chroot.files $(CHROOTFILE); \
 		sudo mv chroot.packages.install $(PKGSFILE); \
-		sudo mv live-image-aarch64.tar.tar.gz $(TARGZFILE); \
+		sudo mv live-image-arm64.tar.tar.gz $(TARGZFILE); \
 		md5sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(CHROOTFILE) $(PKGSFILE) $(TARGZFILE) > $(MD5SUMSFILE); \
 		sha1sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(CHROOTFILE) $(PKGSFILE) $(TARGZFILE) > $(SHA1SUMSFILE); \
 	fi
