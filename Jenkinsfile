@@ -46,7 +46,7 @@ make -j8'''
             
           },
           "build arm64": {
-            ws(dir: '/op/jenkins/parrot-builds') {
+            ws(dir: '/opt/jenkins/parrot-builds') {
               sh '''cd arm64
 make -j8'''
             }
