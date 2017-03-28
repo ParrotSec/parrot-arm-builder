@@ -14,15 +14,21 @@ pipeline {
       steps {
         parallel(
           "configure armhf": {
-            sh '''cd armhf
+            ws(dir: '/opt/jenkins/parrot-builds') {
+              sh '''cd armhf
 make clean
 ./configure'''
+            }
+            
             
           },
           "configure arm64": {
-            sh '''cd arm64
+            ws(dir: '/opt/jenkins/parrot-builds') {
+              sh '''cd arm64
 make clean
 ./configure'''
+            }
+            
             
           }
         )
@@ -32,13 +38,19 @@ make clean
       steps {
         parallel(
           "build armhf": {
-            sh '''cd armhf
+            ws(dir: '/opt/jenkins/parrot-builds') {
+              sh '''cd armhf
 make -j8'''
+            }
+            
             
           },
           "build arm64": {
-            sh '''cd arm64
+            ws(dir: '/op/jenkins/parrot-builds') {
+              sh '''cd arm64
 make -j8'''
+            }
+            
             
           }
         )
