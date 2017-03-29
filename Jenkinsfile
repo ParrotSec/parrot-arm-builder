@@ -3,11 +3,7 @@ pipeline {
   stages {
     stage('setup') {
       steps {
-        ws(dir: '/opt/jenkins/parrot-builds') {
-          sh 'apt-get -y install live-build qemu-user-static debootstrap make'
-        }
-        
-        pwd()
+        sh 'apt-get -y install live-build qemu-user-static debootstrap make'
       }
     }
     stage('configure armhf') {
@@ -42,6 +38,11 @@ make -j8'''
             
           }
         )
+      }
+    }
+    stage('artifacts') {
+      steps {
+        archiveArtifacts '*.tar.gz *.tar.bz2 *.contents *.files *.packages *.build-log.txt *.md5sum* *.sha1sum*'
       }
     }
   }
