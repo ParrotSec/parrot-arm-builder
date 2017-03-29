@@ -42,7 +42,7 @@ make -j8'''
     }
     stage('artifacts') {
       steps {
-        archiveArtifacts '*.tar.gz *.tar.bz2 *.contents *.files *.packages *.build-log.txt *.md5sum* *.sha1sum*'
+        archiveArtifacts(artifacts: 'parrotsec-*', caseSensitive: true)
       }
     }
   }
