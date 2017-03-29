@@ -40,9 +40,18 @@ make -j8'''
         )
       }
     }
-    stage('artifacts') {
+    stage('artifacts armhf') {
       steps {
-        archiveArtifacts(artifacts: 'parrotsec-*', caseSensitive: true)
+        parallel(
+          "artifacts armhf": {
+            archiveArtifacts(artifacts: 'armhf/parrotsec-*', caseSensitive: true)
+            
+          },
+          "artifacts arm64": {
+            archiveArtifacts(artifacts: 'arm64/parrotsec-*', caseSensitive: true)
+            
+          }
+        )
       }
     }
   }
